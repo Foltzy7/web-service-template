@@ -22,9 +22,9 @@ public class ExperienceController {
 
     @RequestMapping(value = "/experiences", method = GET)
     @ResponseBody
-    public ResponseEntity<List<OrgEve>> experiences(@RequestParam(value = "name", defaultValue = "World") String name) {
-        OrgEve experience = new OrgEve(Date.from(Instant.now()), String.format(template, name));
-        List<OrgEve> experiences = new ArrayList<>(Collections.singletonList(experience));
+    public ResponseEntity<List<Experience>> experiences(@RequestParam(value = "name", defaultValue = "World") String name) {
+        Experience experience = new Experience(Date.from(Instant.now()), String.format(template, name));
+        List<Experience> experiences = new ArrayList<>(Collections.singletonList(experience));
         return ResponseEntity.ok(experiences);
     }
 
