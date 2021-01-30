@@ -1,0 +1,41 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath("org.springframework.boot:spring-boot-gradle-plugin:2.1.4.RELEASE")
+    }
+}
+
+plugins {
+    id "io.freefair.lombok" version "3.7.5"
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'org.springframework.boot'
+apply plugin: 'io.spring.dependency-management'
+
+bootJar {
+    baseName = 'gs-rest-service'
+    version = '0.1.0'
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceCompatibility = 12
+targetCompatibility = 12
+
+dependencies {
+    compile("org.springframework.boot:spring-boot-starter-web")
+    compile("com.google.cloud:google-cloud-bigquery:1.78.0")
+    compile("com.google.cloud:google-cloud-storage:1.78.0")
+    compile("com.google.cloud:google-cloud-vision:1.78.0")
+//    compile("org.mongodb:mongo-java-driver:3.10.2")
+//    compile group: 'org.springframework.data', name: 'spring-data-mongodb', version: '1.0.0.RELEASE'
+//    compile("org.springframework.boot:spring-boot-starter-data-rest")
+    testCompile('org.springframework.boot:spring-boot-starter-test')
+}
