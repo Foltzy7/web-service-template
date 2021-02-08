@@ -22,7 +22,18 @@ public class OrgEventController {
                 "way down yonder on the chattahoochee",
                 "It was hotter than a hoochy coochy. We laid rubber on the Georgia asphalt\n" +
                         "We got a little crazy but we never got caught");
-        List<OrgEvent> orgEvents = new ArrayList<>(Collections.singletonList(orgEvent));
+        OrgEvent orgEvent2 = new OrgEvent(
+                "Another event that is awesome",
+                "Somewhere up north",
+                "Bring your tennis racquet. Those mosquitos are big. ");
+        OrgEvent orgEvent3 = new OrgEvent(
+                "Don't miss this",
+                "City park",
+                "Meat tornadoes, sweet BBQ, iced cold tea...'Nuff said right? ");
+        List<OrgEvent> orgEvents = new ArrayList<>();
+        orgEvents.add(orgEvent);
+        orgEvents.add(orgEvent2);
+        orgEvents.add(orgEvent3);
         return ResponseEntity.ok(orgEvents);
     }
 
